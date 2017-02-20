@@ -43,7 +43,7 @@ var utils = {
             }
         }
 
-        return 'kwt-' + cssClass;
+        return 'ab-' + cssClass;
     },
 
     toDashedFromCamelcased: function (str) {

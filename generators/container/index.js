@@ -6,6 +6,7 @@ var utils      = require('../../utils');
 
 
 var TEMPLATES_PATHS = {
+    INDEX: 'index.js',
     REACT:  'react.jsx',
 };
 
@@ -34,6 +35,15 @@ module.exports = generators.Base.extend({
         this.fs.copyTpl(
             this.templatePath(TEMPLATES_PATHS.REACT),
             this.destinationPath(this._name + '/' + this._name + '.jsx'),
+            {
+                name: this._name,
+            }
+        );
+
+        // Create index file
+        this.fs.copyTpl(
+            this.templatePath(TEMPLATES_PATHS.INDEX),
+            this.destinationPath(this._name + '/index.js'),
             {
                 name: this._name,
             }

@@ -6,7 +6,8 @@ var utils      = require('../../utils');
 
 
 var TEMPLATES_PATHS = {
-    REACT:  'react.jsx',
+    INDEX: 'index.js',
+    REACT: 'react.jsx',
     STYLES: 'styles.scss',
 };
 
@@ -75,9 +76,18 @@ module.exports = generators.Base.extend({
             );
         }
 
-        // Create images folder
+        // Create images file
         if (this._checkIfTechSelected('images')) {
            mkdirp.sync(this._name + '/' + 'images/');
         }
+
+        // Create index file
+        this.fs.copyTpl(
+            this.templatePath(TEMPLATES_PATHS.INDEX),
+            this.destinationPath(this._name + '/index.js'),
+            {
+                name: this._name,
+            }
+        );
      }
 });

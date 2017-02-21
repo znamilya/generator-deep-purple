@@ -34,7 +34,6 @@ class <%= name %> extends React.PureComponent {
     }
 }
 
-
 <%= name %>.propTypes = {
 };
 

@@ -7,7 +7,7 @@ var utils      = require('../../utils');
 
 var TEMPLATES_PATHS = {
     ACTIONS:  'actions.js',
-    ACTIONS_TYPES:  'actionsTypes.js',
+    ACTIONS_TYPES:  'actionTypes.js',
     REDUCER: 'reducer.js',
     SCHEMAS: 'schemas.js',
     SELECTORS: 'selectors.js',
@@ -74,7 +74,7 @@ module.exports = generators.Base.extend({
         // Create actionsTypes file
         this.fs.copyTpl(
             this.templatePath(TEMPLATES_PATHS.ACTIONS_TYPES),
-            this.destinationPath(this._name + '/actionsTypes.js'),
+            this.destinationPath(this._name + '/actionTypes.js'),
             {
                 name: this._name,
                 actionsTypes: this._actions.map(utils.toDashedFromCamelcased).map(s => s.toUpperCase()),

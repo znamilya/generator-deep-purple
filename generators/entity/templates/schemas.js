@@ -1,8 +1,8 @@
-import { schema, arrayOf } from 'normalizr';
+import { schema} from 'normalizr';
 
 
-const <%= name %>Schema = new schema.Entity('<%= name %>s',);
-const <%= name %>sSchema = new schema.Array( <%= name %>Schema);
+const <%= name %>Schema = new schema.Entity('<%= name %>s');
+const <%= name %>Schema = new schema.Array(<%= name %>Schema);
 
 
-export { <%= name %>Schema,  <%= name %>sSchema };
+export { <%= name %>Schema, <%= name %>Schema };

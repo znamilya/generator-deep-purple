@@ -1,22 +1,19 @@
-import actionsTypes from './actionsTypes';
+import { makeReducer } from 'helpers/redux';
+import ACTIONS_TYPES from './actionTypes';
 
 
-const defaultState = {};
+const defaultState = [];
 
-const <%= name %>Reducer = (state = defaultState, action) => {
-    switch (action.type) {
+const <%= name %>Reducer = makeReducer(defaultState, {
 <% if (actions.length) { %>
 <% actions.forEach(function (action, i) { -%>
-        case actionsTypes.<%= actionsTypes[i] %>:
-            return state;
+    [ACTIONS_TYPES.<%= actionsTypes[i] %>]: (state, action) => ({
+        ...state
+    }),
 
 <% }) -%>
 <% } -%>
-        default: {
-            return state;
-        }
-    }
-}
+});
 
 
 export default <%= name %>Reducer;

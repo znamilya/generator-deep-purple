@@ -1,8 +1,8 @@
 import { makeActionCreator } from 'helpers/redux';
-import ACTIONS_TYPES from './actionTypes';
+import ACTION_TYPES from './actionTypes';
 
 <% if (actions.length) { %>
 <% actions.forEach(function (action, i) { -%>
-export const <%= action %> = makeActionCreator(ACTIONS_TYPES.<%= actionsTypes[i] %>);
+export const <%= action %> = makeActionCreator(ACTION_TYPES.<%= actionsTypes[i] %>);
 <% }) -%>
 <% } -%>

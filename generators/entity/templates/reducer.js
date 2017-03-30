@@ -1,5 +1,5 @@
 import { makeReducer } from 'helpers/redux';
-import ACTIONS_TYPES from './actionTypes';
+import ACTION_TYPES from './actionTypes';
 
 
 const defaultState = [];
@@ -7,7 +7,7 @@ const defaultState = [];
 const <%= name %>Reducer = makeReducer(defaultState, {
 <% if (actions.length) { %>
 <% actions.forEach(function (action, i) { -%>
-    [ACTIONS_TYPES.<%= actionsTypes[i] %>]: (state, action) => ({
+    [ACTION_TYPES.<%= actionsTypes[i] %>]: (state, action) => ({
         ...state
     }),
 
